@@ -7,7 +7,7 @@ if(os.type() != "Windows_NT") {
 
         //  led = new Gpio(59, 'out'),
         //   button = new Gpio(78, 'in', 'both');
-    touch = new Gpio(25, 'in', 'both'); //left
+    touch = new Gpio(25, 'in', 'falling'); //left
 
 }
 
@@ -16,48 +16,43 @@ if(os.type() != "Windows_NT") {
 
 function setupTouch(){
     if(os.type() == "Windows_NT") {
-    var a = "8a 19 07 2e 7f"
-    var xh = a[1];
-    var xlh = a[3];
-    var xll = a[4];
+        var a = "8a 19 07 2e 7f"
+        var xh = a[1];
+        var xlh = a[3];
+        var xll = a[4];
 
-xDec =  (256*("0x" + a[1])) + (16*a[3]) + 1*a[4] ;
-
-xtest = 1024 + 16 + 9;
-
-    console.log(xh*256);
-    console.log(xlh*16);
-    console.log(xll);
-    console.log(a[4].length);
-console.log(xDec);
-console.log(xtest)
-
-
-
-
-    return
+        xDec =  (256*("0x" + a[1])) + (16*a[3]) + 1*a[4] ;
+        xtest = 1024 + 16 + 9;
+        console.log(xh*256);
+        console.log(xlh*16);
+        console.log(xll);
+        console.log(a[4].length);
+        console.log(xDec);
+        console.log(xtest)
+        return
     }
+    // if not Windows_NT then come here
     console.log("We are at GPIO 25");
     touch.watch(function (err,value){
         if(err){
             console.log(err);
         }
         if(keepout) {
-        console.log("timeout in effect");
+       // console.log("timeout in effect");
         return;
         }
 
         switch(value){
 
             case 0:
-                console.log("Screen has been touched")
-                 keepout = 1;
+             //  console.log("Screen has been touched")
+                 keepout = 1; // sort of debounce  only take first touch, then nothing for 500 ms
                  setTimeout(endkeepout, 500);
-                gettouch();
+                 gettouch();
 
                 break;
             case 1:
-                console.log("screen untouched")
+             //   console.log("screen untouched")
 
                 break;
         }
@@ -67,22 +62,12 @@ console.log(xtest)
 
 function gettouch(){
     exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
-      //  console.log(`stdout: ${stdout}`);
-     //   console.log(`stderr: ${stderr}`);
-        console.log("-----------results----------")
-        var offset = 85
-     //   for( var i = 0; i < 11; i++){
-     //   console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
-     //   }
-
         xPos = ("0x" + stdout[offset + 1])*256 + ("0x" + stdout[offset + 3])*16 + ("0x" + stdout[offset + 4])*1;
         yPos =("0x" + stdout[offset + 7])*256 + ("0x" + stdout[offset + 9])*16 + ("0x" + stdout[offset + 10])*1;
         console.log("x= "  + xPos + "  y= " + yPos);
-
-
     });
 }
 
 function endkeepout(){
-keepout = 0;
+    keepout = 0;
 }
