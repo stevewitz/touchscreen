@@ -12,7 +12,7 @@ if(os.type() != "Windows_NT") {
 setupTouch();
 
 
-exports.setupTouch = function(){
+function setupTouch = function(){
     if(os.type() == "Windows_NT") {return}
     console.log("We are at GPIO 25");
     touch.watch(function (err,value){
