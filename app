@@ -25,7 +25,7 @@ exports.setupTouch = function(){
                 gettouch();
                 break;
             case 1:
-                console.log("screen untouched"
+                console.log("screen untouched")
 
                 break;
         }
