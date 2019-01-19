@@ -48,10 +48,10 @@ function gettouch(){
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
         console.log("-----------results----------")
-        console.log("#13" + stdout[0x13]);
-        console.log("#14" + stdout[0x14]);
-        console.log("#15" + stdout[0x15]);
-        console.log("#16" + stdout[0x16]);
+        console.log(stdout.charAT(0x13));
+        console.log(stdout.charAT(0x14));
+        console.log(stdout.charAT(0x15));
+        console.log(stdout.charAT(0x16));
 
     })
 }
