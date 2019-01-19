@@ -52,7 +52,7 @@ console.log(data.charAT(0x13));
 console.log(data.charAT(0x14));
 console.log(data.charAT(0x15));
 console.log(data.charAT(0x16));
-}
+
   //  exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
   //      console.log(`stdout: ${stdout}`);
   //      console.log(`stderr: ${stderr}`);
