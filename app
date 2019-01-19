@@ -47,6 +47,12 @@ function gettouch(){
     exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
+        console.log("-----------results----------")
+        console.log(stdout[0x13];
+        console.log(stdout[0x14];
+        console.log(stdout[0x15];
+        console.log(stdout[0x16];
+
     })
 }
 
