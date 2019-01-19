@@ -5,8 +5,6 @@ var keepout = 0;
 if(os.type() != "Windows_NT") {
     var Gpio = require('onoff').Gpio;
 
-        //  led = new Gpio(59, 'out'),
-        //   button = new Gpio(78, 'in', 'both');
     touch = new Gpio(25, 'in', 'falling'); //left
 
 }
