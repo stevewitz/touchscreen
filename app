@@ -44,16 +44,25 @@ function setupTouch(){
 }
 
 function gettouch(){
-    exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
-        console.log(`stderr: ${stderr}`);
-        console.log("-----------results----------")
-        console.log(stdout.charAT(0x13));
-        console.log(stdout.charAT(0x14));
-        console.log(stdout.charAT(0x15));
-        console.log(stdout.charAT(0x16));
 
-    })
+var child = exec('i2cdump  -y 1 0x38 i')
+child.stdout.on('data', function (data) {
+console.log(data + '%');
+console.log(data.charAT(0x13));
+console.log(data.charAT(0x14));
+console.log(data.charAT(0x15));
+console.log(data.charAT(0x16));
+}
+  //  exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
+  //      console.log(`stdout: ${stdout}`);
+  //      console.log(`stderr: ${stderr}`);
+  //      console.log("-----------results----------")
+  //      console.log(stdout.charAT(0x13));
+  //     console.log(stdout.charAT(0x14));
+  //      console.log(stdout.charAT(0x15));
+  //      console.log(stdout.charAT(0x16));
+//
+ //   })
 }
 
 function endkeepout(){
