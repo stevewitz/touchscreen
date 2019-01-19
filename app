@@ -48,7 +48,7 @@ function gettouch(){
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
         console.log("-----------results----------")
-        var offset = 89
+        var offset = 85
         for( var i = 0; i < 11; i++){
         console.log("count = "+offset + " " + i + " :  "+ stdout[offset + i]);
 
