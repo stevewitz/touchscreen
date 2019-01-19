@@ -48,10 +48,14 @@ function gettouch(){
     var child = exec('i2cdump  -y 1 0x38 i');
     child.stdout.on('data', function (data) {
     console.log(data + '%');
-    console.log(data.charAT(0x13));
-    console.log(data.charAT(0x14));
-    console.log(data.charAT(0x15));
-    console.log(data.charAT(0x16));
+    console.log(data[0x13]);
+    console.log(data[0x14]);
+    console.log(data[0x15]);
+    console.log(data[0x16]);
+    console.log(data[0x17]);
+    console.log(data[0x18]);
+    console.log(data[0x19]);
+    console.log(data[0x20]);
 
     });
 }
