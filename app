@@ -14,12 +14,12 @@ setupTouch();
 
 exports.setupTouch = function(){
     if(os.type() == "Windows_NT") {return}
-    console.log("We are at GPIO 70");
+    console.log("We are at GPIO 25");
     touch.watch(function (err,value){
         if(err){
             console.log(err);
         }
-        touch(value){
+        switch(value){
             case 0:
                 console.log("Screen has been touched)"
                 gettouch();
