@@ -16,12 +16,12 @@ if(os.type() != "Windows_NT") {
 
 function setupTouch(){
     if(os.type() == "Windows_NT") {
-    var a = "84 19 07 2e 7f"
+    var a = "8a 19 07 2e 7f"
     var xh = a[1];
     var xlh = a[3];
     var xll = a[4];
 
-xDec =  (256*a[1]) + (16*a[3]) + 1*a[4] ;
+xDec =  (256*("0x" + a[1])) + (16*a[3]) + 1*a[4] ;
 
 xtest = 1024 + 16 + 9;
 
@@ -75,8 +75,8 @@ function gettouch(){
         console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
         }
 
-        xPos = stdout[offset + 1]*256 + stdout[offset + 3]*16 + stdout[offset + 4]*1;
-        yPos =stdout[offset + 7]*256 + stdout[offset + 9]*16 + stdout[offset + 10]*1;
+        xPos = ("0x" + stdout[offset + 1])*256 + ("0x" + stdout[offset + 3])*16 + ("0x" + stdout[offset + 4])*1;
+        yPos =("0x" + stdout[offset + 7])*256 + ("0x" + stdout[offset + 9])*16 + ("0x" + stdout[offset + 10])*1;
         console.log("x= "  + xPos + "  y= " + yPos);
 
 
