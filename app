@@ -30,7 +30,7 @@ function setupTouch(){
             case 0:
                 console.log("Screen has been touched")
                  keepout = 1;
-                 setTimeout(endkeepout(), 500);
+                 setTimeout(endkeepout, 500);
                 gettouch();
 
                 break;
