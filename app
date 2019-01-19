@@ -48,17 +48,17 @@ function gettouch(){
         console.log(`stdout: ${stdout}`);
         console.log(`stderr: ${stderr}`);
         console.log("-----------results----------")
-        console.log(stdout[23]);
-        console.log(stdout[24]);
-        console.log(stdout[25]);
-        console.log(stdout[26]);
-        console.log(stdout[27]);
-        console.log(stdout[28]);
-        console.log(stdout[29]);
-        console.log(stdout[30]);
-        console.log(stdout[31]);
-        console.log(stdout[32]);
-        console.log(stdout[33]);
+        console.log(stdout[70]);
+        console.log(stdout[71]);
+        console.log(stdout[72]);
+        console.log(stdout[73]);
+        console.log(stdout[74]);
+        console.log(stdout[75]);
+        console.log(stdout[76]);
+        console.log(stdout[77]);
+        console.log(stdout[78]);
+        console.log(stdout[79]);
+        console.log(stdout[80]);
 
 
 
