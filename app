@@ -61,6 +61,7 @@ function setupTouch(){
 }
 
 function gettouch(){
+    var offset = 85;
     exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
         xPos = ("0x" + stdout[offset + 1])*256 + ("0x" + stdout[offset + 3])*16 + ("0x" + stdout[offset + 4])*1;
         yPos =("0x" + stdout[offset + 7])*256 + ("0x" + stdout[offset + 9])*16 + ("0x" + stdout[offset + 10])*1;
