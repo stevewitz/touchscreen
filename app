@@ -13,8 +13,30 @@ if(os.type() != "Windows_NT") {
 
  setupTouch();
 
+
 function setupTouch(){
-    if(os.type() == "Windows_NT") {return}
+    if(os.type() == "Windows_NT") {
+    var a = "84 19 07 2e 7f"
+    var xh = a[1];
+    var xlh = a[3];
+    var xll = a[4];
+
+xDec =  (256*a[1]) + (16*a[3]) + 1*a[4] ;
+
+xtest = 1024 + 16 + 9;
+
+    console.log(xh*256);
+    console.log(xlh*16);
+    console.log(xll);
+    console.log(a[4].length);
+console.log(xDec);
+console.log(xtest)
+
+
+
+
+    return
+    }
     console.log("We are at GPIO 25");
     touch.watch(function (err,value){
         if(err){
@@ -51,7 +73,9 @@ function gettouch(){
         var offset = 85
         for( var i = 0; i < 11; i++){
         console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
-
+        xPos = stdout[1]*256 + stdout[3]*16 + stdout[4]*1;
+        yPos =stdout[7]*256 + stdout[9]*16 + stdout[10]*1;
+        console.log("x= "  + xPos + "  y= " + yPos);
         }
 
 
