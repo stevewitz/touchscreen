@@ -73,13 +73,11 @@ function gettouch(){
         var offset = 85
         for( var i = 0; i < 11; i++){
         console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
-
-        console.log("x= "  + xPos + "  y= " + yPos);
         }
 
         xPos = stdout[offset + 1]*256 + stdout[offset + 3]*16 + stdout[offset + 4]*1;
         yPos =stdout[offset + 7]*256 + stdout[offset + 9]*16 + stdout[offset + 10]*1;
-
+        console.log("x= "  + xPos + "  y= " + yPos);
 
 
     });
