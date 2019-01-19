@@ -1,5 +1,7 @@
 var exec = require('child_process').exec;
 var os = require('os');
+const appmodule = require("./app");
+
 if(os.type() != "Windows_NT") {
     var Gpio = require('onoff').Gpio;
 
@@ -9,7 +11,7 @@ if(os.type() != "Windows_NT") {
 
 }
 
-setupTouch();
+appmodule.setupTouch();
 
 
 function setupTouch = function(){
