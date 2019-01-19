@@ -45,7 +45,7 @@ function setupTouch(){
 
 function gettouch(){
 
-var child = exec('i2cdump  -y 1 0x38 i')
+var child = exec('i2cdump  -y 1 0x38 i');
 child.stdout.on('data', function (data) {
 console.log(data + '%');
 console.log(data.charAT(0x13));
@@ -63,6 +63,7 @@ console.log(data.charAT(0x16));
   //      console.log(stdout.charAT(0x16));
 //
  //   })
+}
 }
 
 function endkeepout(){
