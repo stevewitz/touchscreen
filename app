@@ -21,7 +21,7 @@ exports.setupTouch = function(){
         }
         switch(value){
             case 0:
-                console.log("Screen has been touched)"
+                console.log("Screen has been touched")
                 gettouch();
                 break;
             case 1:
