@@ -21,7 +21,7 @@ function setupTouch(){
             console.log(err);
         }
         if(timeout) {
-        console,log("timeout in effect);
+        console,log("timeout in effect");
         return;
         }
 
