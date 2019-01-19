@@ -67,13 +67,13 @@ console.log(xtest)
 
 function gettouch(){
     exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
-        console.log(`stderr: ${stderr}`);
+      //  console.log(`stdout: ${stdout}`);
+     //   console.log(`stderr: ${stderr}`);
         console.log("-----------results----------")
         var offset = 85
-        for( var i = 0; i < 11; i++){
-        console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
-        }
+     //   for( var i = 0; i < 11; i++){
+     //   console.log("count = "+offset  + i + " :  "+ stdout[offset + i]);
+     //   }
 
         xPos = ("0x" + stdout[offset + 1])*256 + ("0x" + stdout[offset + 3])*16 + ("0x" + stdout[offset + 4])*1;
         yPos =("0x" + stdout[offset + 7])*256 + ("0x" + stdout[offset + 9])*16 + ("0x" + stdout[offset + 10])*1;
