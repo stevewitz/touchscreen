@@ -31,6 +31,7 @@ exports.setupTouch = function(){
         }
 
     });
+}
 
 function gettouch(){
     exec('i2cdump  -y 1 0x38 i ', (error, stdout, stderr) => {
