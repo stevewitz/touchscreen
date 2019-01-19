@@ -26,11 +26,13 @@ function setupTouch(){
         }
 
         switch(value){
-        keepout = 1;
-        setTimeout(keepout=0, 500);
+
             case 0:
                 console.log("Screen has been touched")
+                 keepout = 1;
+                 setTimeout(keepout=0, 500);
                 gettouch();
+
                 break;
             case 1:
                 console.log("screen untouched")
