@@ -70,7 +70,7 @@ function getbatt(){
     var batt
     exec('i2cget -y 1 0x36 0x04', (error, stdout, stderr) => {
     console.log("stdout = " + stdout);
-    batt = ("0x" + stdout[0])*16 + ("0x" +stdout[1]);
+    batt = ("0x" + stdout[0])*16 + ("0x" +stdout[1])*1;
     console.log("BATTERY % = " + batt)
 
     });
