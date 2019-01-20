@@ -74,7 +74,7 @@ function getbatt(){
     console.log("BATTERY % = " + batt)
 
     });
-
+}
 
 function endkeepout(){
     keepout = 0;
