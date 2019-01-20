@@ -47,7 +47,7 @@ function setupTouch(){
                  keepout = 1; // sort of debounce  only take first touch, then nothing for 500 ms
                  setTimeout(endkeepout, 500);
                  gettouch();
-
+                    getbatt();  //just for testiing battery here
                 break;
             case 1:
              //   console.log("screen untouched")
@@ -66,6 +66,16 @@ function gettouch(){
         console.log("x= "  + xPos + "  y= " + yPos);
     });
 }
+
+function getbatt(){
+    var batt
+    exec('i2cget -y 1 0x36 0x04', (error, stdout, stderr) => {
+    console.log("stdout = " + stdout);
+    batt = ("0x" + stdout[0])*16 + ("0x" +stdout[1]);
+    console.log("BATTERY % = " + batt)
+
+    });
+
 
 function endkeepout(){
     keepout = 0;
