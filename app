@@ -41,7 +41,6 @@ function setupTouch(){
         }
 
         switch(value){
-
             case 0:
              //  console.log("Screen has been touched")
                  keepout = 1; // sort of debounce  only take first touch, then nothing for 500 ms
